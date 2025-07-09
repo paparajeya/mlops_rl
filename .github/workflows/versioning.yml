@@ -67,21 +67,21 @@ jobs:
           chmod +x ./update_version.sh
           ./update_version.sh ${{ steps.get-bump-type.outputs.bump }}
 
-    #   - name: Generate Changelog
-    #     id: changelog
-    #     uses: TriPSs/conventional-changelog-action@v6
-    #     with:
-    #       github-token: ${{ secrets.GITHUB_TOKEN }}
-    #       preset: conventionalcommits
-    #       # config-file-path: ./.changelog-config.js
-    #       version-file: VERSION
-    #       skip-bump: true
-    #       skip-version-file: true
-    #       skip-commit: true
-    #       skip-tag: true
-    #       output-file: CHANGELOG.md
-    #       skip-on-empty: true
-    #       release-count: 0  # <-- This enables inclusion of all version records
+      - name: Generate Changelog
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          preset: conventionalcommits
+          # config-file-path: ./.changelog-config.js
+          version-file: VERSION
+          skip-bump: true
+          skip-version-file: true
+          skip-commit: true
+          skip-tag: true
+          output-file: CHANGELOG.md
+          skip-on-empty: true
+          release-count: 0  # <-- This enables inclusion of all version records
 
       - name: Commit and Push VERSION_UPDATE Changes
         if: steps.check_merge.outputs.is_merge == 'false'

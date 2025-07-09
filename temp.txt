@@ -1,2 +1,8 @@
-This is the first line of the file.
-asds
+Step 1: Clone from https://github.com/paparajeya/mlops_rl.git
+git clone https://github.com/paparajeya/mlops_rl.git
+
+Step 2: Copy the contents of this repo into your local repository -> mlops_rl
+
+Step 3: Change the value of VERSION to 0.0.-1
+
+Step 4: Push the changes to github
